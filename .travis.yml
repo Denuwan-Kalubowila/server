@@ -1,25 +1,32 @@
+# Use Node.js as the environment
 language: node_js
+
+# Specify the Node.js version
 node_js: 
   - "20"
 
+# Install dependencies
 before_script:
   - npm install
 
+# Start the application in development mode (replace with your appropriate command)
 script:
-  - npm run dev
+  - npm run dev  # Or any command to run the app (e.g., npm start)
 
+# Limit Travis CI to run only on the "main" branch
 branches:
   only:
     - main
 
+# Cache the 'node_modules' directory to speed up future builds
 cache:
   directories:
     - node_modules
 
+# Notification settings
 notifications:
   email:
     recipients:
       - denuwankalubowila@gmail.com
-    on_success: never  # Don't send emails on successful builds
-    on_failure: always  # Always send emails on failed builds
-
+    on_success: never  # Only send emails if build fails
+    on_failure: always  # Always send emails on build failures

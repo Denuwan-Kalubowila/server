@@ -1,6 +1,6 @@
 const { genaiServices } = require("../genai-services/gemini");
 const path =require('node:path')
-
+//food services
 exports.foodServices={
     async healthyAnaliyzer(req,res){
         const filename = req.file.filename

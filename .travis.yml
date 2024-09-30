@@ -1,19 +1,25 @@
 language: node_js
 node_js: 
   - "20"
+
 before_script:
   - npm install
+
 script:
   - npm run dev
+
 branches:
   only:
     - main
+
 cache:
   directories:
     - node_modules
+
 notifications:
   email:
     recipients:
       - denuwankalubowila@gmail.com
-    on_success: always  # Only send emails on failures
-    on_failure: always
+    on_success: never  # Don't send emails on successful builds
+    on_failure: always  # Always send emails on failed builds
+
